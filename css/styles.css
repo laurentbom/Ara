@@ -1,0 +1,236 @@
+/******************************************************/
+/********************* Mobile first *******************/
+/******************************************************/
+/* Global */
+body{
+  font-family: 'Poppins', sans-serif;
+}
+/*********************** Header ***********************/
+/* Fond */
+header{
+  position: relative;
+  background: url(../img/hero.jpg) center;
+  height: 500px;
+}
+/* Filtre */
+header::before{
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.411);
+  height: 100%;
+  width: 100%;
+}
+/* Logo Ara */
+header img{
+  position: relative;
+  top: 30px;
+  left: 30px;
+  height: 70px;
+}
+/* Contenu */
+.header-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  text-align: center;
+}
+.header-content h1{
+  font-size: 50px;
+  margin-bottom: 65px;
+  color: #fff;
+}
+.header-content a{
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 2px solid white;
+  padding: 15px 25px;
+}
+/* Flèche */
+.header-content a:before{
+  content: '';
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border-style: solid;
+  border-width: 5px 0 5px 10px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-right: 10px;
+}
+/********************* Section Life and techno *******************/
+/* Partie gauche */
+.half{
+  width: 100%;
+  text-align: center;
+}
+/* Paragraphes couleurs */
+.life-and-tech__specs .frame{
+  background-color: #6bd3cc;
+}
+.life-and-tech__specs .frame p{
+  padding: 30px 0;
+  font-size: 14px;
+  margin: 0;
+}
+.life-and-tech__specs .modules{
+  background-color: #ff4f42;
+}
+.life-and-tech__specs .modules p{
+  padding: 30px 0;
+  font-size: 14px;
+  margin: 0;
+}
+/* Titre */
+.life-and-tech__content h2{
+  font-size: 25px;
+}
+/* Partie droite */
+.life-and-tech .half--img{
+  background: url(../img/phone2.jpg) center/cover;
+  height: 680px;
+}
+/********************* Section Mix et built *******************/
+section p{
+  line-height: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+.mix-match-swap .half--img{
+  background: url(../img/2.jpg) center/cover;
+  height: 200px;
+}
+.built-to-last .half--img{
+  background: url(../img/03.jpg) center/cover;
+  height: 200px;
+}
+/********************* Footer *******************/
+footer{
+  background-color: black;
+  text-align: center;
+  padding: 30px 0;
+}
+footer a,small{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+footer small img{
+  width: 120px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+/******************************************************/
+/****************** Responsive Desktop ****************/
+/******************************************************/
+
+@media screen and (min-width:900px){
+  /*********************** Header *********************/
+  header{
+    height: 790px;
+  }
+  header::before{
+    content: '';
+    background-color: transparent;
+  }
+  .header-content{
+    position: absolute;
+    top: auto;
+    bottom: 100px;
+    left: 50px;
+    transform: translate(0%,0%);
+    text-align-last: left;
+  }
+  .header-content h1{
+    font-size: 80px;
+  }
+  /****************** Tailles des zones ****************/
+  .life-and-tech__content,.mix-match-swap,.built-to-last{
+    height: 380px;
+    position: relative;
+  }
+  .life-and-tech__specs{
+    height: 300px;
+    position: relative;
+  }
+  .half{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    /*! Pourquoi bottom*/
+    vertical-align: bottom;
+    position: relative;
+  }
+  /******************** Mise en forme ******************/
+  /* Titres */
+  /*! Décalage début titre sans width*/
+  .life-and-tech__content h2,.built-to-last .content h2{
+    margin: 0;
+    width: 80%;
+  }
+  .mix-match-swap .content h2{
+    margin: 0;
+    width: 100%;
+  }
+  /* Paragraphes */
+  p {
+    text-align: left;
+    width: 60%;
+  }
+  /* Rajout images dans les p de couleurs */
+  .frame p::before{
+    content: '';
+    width: 34px;
+    height: 59px;
+    background-image: url(../img/illy1.png);
+    background-size: cover;
+    display: block;
+  }
+  .modules p::before{
+    content: '';
+    width: 34px;
+    height: 59px;
+    background-image: url(../img/illy2.png);
+    background-size: cover;
+    display: block;
+  }
+  /* Positions contents*/
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    text-align-last: left;
+  }
+  /* Images */
+  .mix-match-swap .half--img{
+    float: left;
+    height: 100%;  
+  }
+  .built-to-last .half--img{
+    float: right;
+    height: 100%;  
+  }
+  /******************** Footer ******************/
+  small{
+    float: left;
+    margin-left: 20px;
+  }
+  footer small img{
+    width: 150px;
+  }
+  footer nav{
+    text-align: right;
+    margin-right: 20px;
+  }
+  footer nav a{
+    margin: 0 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
